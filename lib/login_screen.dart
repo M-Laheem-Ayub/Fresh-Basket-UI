@@ -23,49 +23,72 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.asset("assets/images/shape7.png"),
-            SizedBox(height: 35),
-            MyText(text: "Welcome Back!", fWeight: FontWeight.bold, size: 18),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 25.0,
-                vertical: 10,
+        child: SizedBox(
+          height: screenHeight,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(
+                "assets/images/shape7.png",
+                width: screenWidth,
+                height: screenHeight * 0.2,
+                fit: BoxFit.fill,
               ),
-              child: Column(
-                children: [
-                  MyTextField(text: "Email", icon: Icons.email_outlined),
-                  SizedBox(height: 10),
-                  MyTextField(
-                    text: "Password",
-                    icon: Icons.lock_outline_rounded,
-                  ),
-                  RememberMeCheckBox(
-                    isChecked: isChecked,
-                    changeCheckedStatus: changeCheckedStatus,
-                  ),
-                  MyButton(text: "Login", onClick: () {}),
-                  SizedBox(height: 10),
-                  AuthToggleText(
-                    text: "Don't have an account?",
-                    actionText: " Sign Up",
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUpScreen()),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
 
-            Image.asset("assets/images/shape6.png"),
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25.0,
+                  vertical: 10,
+                ),
+                child: Column(
+                  children: [
+                    MyText(
+                      text: "Welcome Back!",
+                      fWeight: FontWeight.bold,
+                      size: 18,
+                    ),
+                    SizedBox(height: 20),
+                    MyTextField(text: "Email", icon: Icons.email_outlined),
+                    SizedBox(height: 10),
+                    MyTextField(
+                      text: "Password",
+                      icon: Icons.lock_outline_rounded,
+                    ),
+                    RememberMeCheckBox(
+                      isChecked: isChecked,
+                      changeCheckedStatus: changeCheckedStatus,
+                    ),
+                    MyButton(text: "Login", onClick: () {}),
+                    SizedBox(height: 10),
+                    AuthToggleText(
+                      text: "Don't have an account?",
+                      actionText: " Sign Up",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+
+              Image.asset(
+                "assets/images/shape6.png",
+                width: screenWidth,
+                height: screenHeight * 0.2,
+                fit: BoxFit.fill,
+              ),
+            ],
+          ),
         ),
       ),
     );

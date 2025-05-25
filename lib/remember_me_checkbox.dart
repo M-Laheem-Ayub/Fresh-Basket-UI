@@ -11,35 +11,32 @@ class RememberMeCheckBox extends StatelessWidget {
   final Function changeCheckedStatus;
   @override
   Widget build(BuildContext context) {
-    return Transform.translate(
-      offset: Offset(-14.5, 0),
-      child: Row(
-        children: [
-          Transform.scale(
-            scale: 0.9,
-            child: Checkbox(
-              value: isChecked,
-              onChanged: (value) {
-                changeCheckedStatus();
-              },
-              activeColor: Color(0xfff6b33e),
-              checkColor: Colors.white,
-              side: BorderSide(color: Color(0xfff6b33e)),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4),
-              ),
+    return Row(
+      children: [
+        Transform.scale(
+          scale: 0.9,
+          child: Checkbox(
+            value: isChecked,
+            onChanged: (value) {
+              changeCheckedStatus();
+            },
+            activeColor: Color(0xfff6b33e),
+            checkColor: Colors.white,
+            side: BorderSide(color: Color(0xfff6b33e)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4),
             ),
           ),
-          Transform.translate(
-            offset: Offset(-3, 1),
-            child: MyText(
-              text: "Remember me",
-              fWeight: FontWeight.bold,
-              color: Color(0xfff6b33e),
-            ),
+        ),
+        Transform.translate(
+          offset: Offset(-3, 1),
+          child: MyText(
+            text: "Remember me",
+            fWeight: FontWeight.bold,
+            color: Color(0xfff6b33e),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
