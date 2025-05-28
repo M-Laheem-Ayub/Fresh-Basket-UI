@@ -10,17 +10,19 @@ class MyText extends StatelessWidget {
     this.fWeight = FontWeight.normal,
     this.size = 14,
     this.height = 1.5,
+    this.textAlign = TextAlign.center,
   });
 
   final String text;
   final double size, height;
   final FontWeight fWeight;
   final Color color;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
       text,
       style: TextStyle(
         fontSize: size,

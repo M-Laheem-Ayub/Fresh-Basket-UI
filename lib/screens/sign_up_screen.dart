@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_basket/helpers/screen_size.dart';
 import 'package:fresh_basket/widgets/auth_toggle_text.dart';
 import 'package:fresh_basket/screens/login_screen.dart';
-import 'package:fresh_basket/widgets/my_button.dart';
+import 'package:fresh_basket/widgets/login_or_sign_up_button.dart';
 import 'package:fresh_basket/widgets/my_text.dart';
 import 'package:fresh_basket/widgets/my_textfield.dart';
 
@@ -10,19 +11,19 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = ScreenSize.height(context);
+    double screenWidth = ScreenSize.width(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: SizedBox(
-            height: screenHeight,
+            height: screenHeight * 0.965,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  "assets/images/shape8.png",
+                  "assets/images/shapes/shape8.png",
                   width: screenWidth,
                   height: screenHeight * 0.2,
                   fit: BoxFit.fill,
@@ -55,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                       SizedBox(height: 10),
                       MyTextField(text: "Phone", icon: Icons.phone),
                       SizedBox(height: 10),
-                      MyButton(
+                      LoginOrSignUpButton(
                         text: "Create",
                         onClick: () {
                           Navigator.pop(context);
@@ -86,9 +87,9 @@ class SignUpScreen extends StatelessWidget {
                 ),
 
                 Image.asset(
-                  "assets/images/shape9.png",
+                  "assets/images/shapes/shape9.png",
                   width: screenWidth,
-                  height: screenHeight * 0.2,
+                  height: screenHeight * 0.14,
                   fit: BoxFit.fill,
                 ),
               ],

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_basket/helpers/screen_size.dart';
 import 'package:fresh_basket/screens/home_screen.dart';
 import 'package:fresh_basket/widgets/auth_toggle_text.dart';
-import 'package:fresh_basket/widgets/my_button.dart';
+import 'package:fresh_basket/widgets/login_or_sign_up_button.dart';
 import 'package:fresh_basket/widgets/my_text.dart';
 import 'package:fresh_basket/widgets/my_textfield.dart';
 import 'package:fresh_basket/widgets/remember_me_checkbox.dart';
@@ -24,8 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = ScreenSize.height(context);
+    double screenWidth = ScreenSize.width(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -36,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  "assets/images/shape7.png",
+                  "assets/images/shapes/shape7.png",
                   width: screenWidth,
                   height: screenHeight * 0.2,
                   fit: BoxFit.fill,
@@ -65,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         isChecked: isChecked,
                         changeCheckedStatus: changeCheckedStatus,
                       ),
-                      MyButton(
+                      LoginOrSignUpButton(
                         text: "Login",
                         onClick: () {
                           Navigator.push(
@@ -94,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 Image.asset(
-                  "assets/images/shape6.png",
+                  "assets/images/shapes/shape6.png",
                   width: screenWidth,
                   height: screenHeight * 0.2,
                   fit: BoxFit.fill,
