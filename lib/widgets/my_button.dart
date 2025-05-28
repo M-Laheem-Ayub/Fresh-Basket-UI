@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_basket/my_text.dart';
+import 'package:fresh_basket/widgets/my_text.dart';
 
 class MyButton extends StatelessWidget {
   const MyButton({super.key, required this.text, required this.onClick});
